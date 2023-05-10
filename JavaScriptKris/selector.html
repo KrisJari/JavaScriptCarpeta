@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+<body onload="inicio()">
+    <div class="container">
+        <div class="row">
+            <div class="col alert alert-primary text-center">
+                <h2>MODIFICACIÓN PROPIEDADES OBJETO JAVASCRIPT</h2>
+
+            </div>            
+
+        </div>
+        <div class="row">
+                    <div class="col">
+                        <h2 class="alert alert-warning text-center">SELECTOR</h2>
+                        <div class="form-group">
+                            <label for="ancho">ANCHO CUADRO</label>
+                            <input type="range" class="form-control" id="ancho" value="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alto">ALTO CUADRO</label>
+                            <input type="range" class="form-control" id="alto" value="80">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="color">COLOR DE FONDO</label>
+                            <input type="color" class="form-control" id="color" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sombra">SOMBRA DE CUADRO</label>
+                                <select  class="form-select" id="sombra" >
+                                    <option value="10px 10px 10px grey">PONER SOMBRA</option>
+                                    <option selected value="0px 0px 0px grey">SIN SOMBRA</option>
+                                </select>
+                                <label for="text">CONTENIDO</label>
+                                <textarea id="contenido" rows="6" style="resize: none;"class="form-control"></textarea>
+                        </div><br>
+                        <button type="button" onclick="actualizar()" class="btn btn-primary btn-lg btn-block">ACTUALIZA</button>
+
+                    </div>
+        
+                <div class="col">
+                    <div id="cuadro" style="margin: 0 auto;">
+                        <h4 id="text" style="font-size:1.5em; text-align:center; padding-top: 25px;"></h4>
+                    </div>
+                 </div> 
+       </div>
+    </div>
+    <script>
+        
+                function inicio(){
+
+
+                document.getElementById("cuadro").style.width = document.getElementById("ancho").value + "%";
+                document.getElementById("cuadro").style.height = document.getElementById("alto").value + "%";
+                document.getElementById("cuadro").style.backgroundColor = document.getElementById("color").value ;
+                document.getElementById("cuadro").style.webkitBoxShadow = document.getElementById("sombra").value;
+                document.getElementById("text").innerText= document.getElementById("contenido").value;
+             }
+                 function actualizar(){
+
+
+                    document.getElementById("cuadro").style.width = document.getElementById("ancho").value + "%";
+                    document.getElementById("cuadro").style.height = document.getElementById("alto").value + "%";
+                    document.getElementById("cuadro").style.backgroundColor = document.getElementById("color").value ;
+                    document.getElementById("cuadro").style.webkitBoxShadow = document.getElementById("sombra").value;
+                    document.getElementById("text").innerText= document.getElementById("contenido").value;
+                }
+
+
+
+      
+
+    </script>
+</body>
+</html>
